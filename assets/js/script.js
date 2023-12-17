@@ -146,10 +146,22 @@ icons.forEach((icon) =>{
     
     // Creato elementi
     const div = document.createElement('div');
-    
+    const iconEl = document.createElement('i');
+    const iconName = document.createElement('span');
+
     // Aggiunto una classe al div
     div.classList.add('box');
+
+    // Aggiunto classi alle icone
+    iconEl.classList.add(icon.family, icon.prefix + icon.name, 'fa-' + icon.type);
+
+    // Aggiunto il nome dell'icona al div
+    iconName.textContent = icon.name;
+
+    iconEl.style.color = icon.color
     
     container.append(div);
+    div.append(iconEl, iconName)
     
+    console.log(icon);
 })
