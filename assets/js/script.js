@@ -158,7 +158,8 @@ icons.forEach((icon) =>{
     // Aggiunto il nome dell'icona al div
     iconName.textContent = icon.name;
 
-    iconEl.style.color = icon.color
+    // Aggiunto il colore richiesto all'icona
+    iconEl.style.color = icon.color;
     
     container.append(div);
     div.append(iconEl, iconName)
