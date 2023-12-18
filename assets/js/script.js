@@ -129,7 +129,7 @@ const icons = [
 		color: 'blue'
 	},
 	{
-		name: 'user-secret',
+        name: 'user-secret',
 		prefix: 'fa-',
 		type: 'user',
 		family: 'fas',
@@ -139,10 +139,14 @@ const icons = [
 
 console.log(icons);
 
+
+
+
+
 const container = document.querySelector('.container');
 
-icons.forEach((icon) =>{
 
+function myFunction(icon) {
     
     // Creato elementi
     const div = document.createElement('div');
@@ -163,6 +167,35 @@ icons.forEach((icon) =>{
     
     container.append(div);
     div.append(iconEl, iconName)
+
+}
+
+
+
+icons.forEach((icon) =>{
     
-    console.log(icon);
+    myFunction(icon);
+    
+})
+
+
+
+const form_select = document.getElementById('form');
+
+
+form_select.addEventListener('change', function(){
+
+    container.innerHTML = "" ;
+
+    icons.forEach((icon) =>{
+
+
+        if(icon.type === form_select.value || form_select.value === 'all'){
+
+       myFunction(icon);
+
+        }
+        
+    })
+    
 })
